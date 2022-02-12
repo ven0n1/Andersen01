@@ -22,27 +22,27 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getServletPath();
-        switch (action) {
-            case "/new":
-                showNewForm(request, response);
-                break;
-            case "/insert":
-                insertUser(request, response);
-                break;
-            case "/delete":
-                deleteUser(request, response);
-                break;
-            case "/edit":
-                showEditForm(request, response);
-                break;
-            case "/update":
-                updateUser(request, response);
-                break;
-            default:
-                selectAll(request, response);
-                break;
-        }
+//        String action = request.getServletPath();
+//        switch (action) {
+//            case "/new":
+//                showNewForm(request, response);
+//                break;
+//            case "/insert":
+//                insertUser(request, response);
+//                break;
+//            case "/delete":
+//                deleteUser(request, response);
+//                break;
+//            case "/edit":
+//                showEditForm(request, response);
+//                break;
+//            case "/update":
+//                updateUser(request, response);
+//                break;
+//            default:
+//                selectAll(request, response);
+//                break;
+//        }
     }
 
     @Override
