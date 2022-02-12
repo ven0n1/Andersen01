@@ -16,33 +16,33 @@ public class UserServlet extends HttpServlet {
     private IDataProvider dataProvider;
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         dataProvider = new PostgresDataProvider();
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String action = request.getServletPath();
-//        switch (action) {
-//            case "/new":
-//                showNewForm(request, response);
-//                break;
-//            case "/insert":
-//                insertUser(request, response);
-//                break;
-//            case "/delete":
-//                deleteUser(request, response);
-//                break;
-//            case "/edit":
-//                showEditForm(request, response);
-//                break;
-//            case "/update":
-//                updateUser(request, response);
-//                break;
-//            default:
-//                selectAll(request, response);
-//                break;
-//        }
+        String action = request.getServletPath();
+        switch (action) {
+            case "/new":
+                showNewForm(request, response);
+                break;
+            case "/insert":
+                insertUser(request, response);
+                break;
+            case "/delete":
+                deleteUser(request, response);
+                break;
+            case "/edit":
+                showEditForm(request, response);
+                break;
+            case "/update":
+                updateUser(request, response);
+                break;
+            default:
+                selectAll(request, response);
+                break;
+        }
     }
 
     @Override
@@ -54,14 +54,14 @@ public class UserServlet extends HttpServlet {
             throws IOException, ServletException {
         List<User> listUser = dataProvider.selectAll();
         request.setAttribute("listUser", listUser);
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("user-list.jsp");
-//        dispatcher.forward(request, response);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user-list.jsp");
+        dispatcher.forward(request, response);
     }
 
     private void showNewForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("user-form.jsp");
-//        dispatcher.forward(request, response);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user-form.jsp");
+        dispatcher.forward(request, response);
     }
 
     private void showEditForm(HttpServletRequest request, HttpServletResponse response)
@@ -69,8 +69,8 @@ public class UserServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         User existingUser = dataProvider.getById(id);
         request.setAttribute("user", existingUser);
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("user-form.jsp");
-//        dispatcher.forward(request, response);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user-form.jsp");
+        dispatcher.forward(request, response);
 
     }
 

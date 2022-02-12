@@ -6,7 +6,7 @@
   Time: 11:07
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>List of Users</title>
@@ -16,7 +16,7 @@
 <%--        <a href="<%=request.getContextPath()%>/new">Add New User</a>--%>
     </div>
     <br>
-    <table style="border-collapse: collapse; width: 100%;" border="1">
+    <table style="border-collapse: collapse; width: 100%;">
         <thead>
             <tr>
                 <th>Id</th>
