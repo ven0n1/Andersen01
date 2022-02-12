@@ -12,6 +12,6 @@ public class Constants {
     public static final String SURNAME = "surname";
     public static final String NAME = "name";
     public static final String AGE = "age";
-    public static final String JSP_USER_LIST = "src/main/webapp/user-list.jsp";
-    public static final String JSP_USER_FORM = "src/main/webapp/user-form.jsp";
+    public static final String JSP_USER_LIST = "list-user.jsp";
+    public static final String JSP_USER_FORM = "user-form.jsp";
 }
