@@ -1,7 +1,7 @@
 package com.example.andersen01;
 
 public class Constants {
-    public static final String INSERT = "INSERT INTO users (surname, name, age) VALUES (?, ?, ?);";
+    public static final String INSERT = "INSERT INTO users VALUES (default, ?, ?, ?);";
     public static final String GET_BY_ID = "SELECT * FROM users WHERE id = ?;";
     public static final String SELECT_ALL = "SELECT * FROM users;";
     public static final String UPDATE = "UPDATE users SET surname = ?, name = ?, age = ? WHERE id = ?;";
