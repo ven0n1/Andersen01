@@ -80,9 +80,9 @@ public class UserServlet extends HttpServlet {
             throws IOException {
         User user = new User(request.getParameter(Constants.SURNAME), request.getParameter(Constants.NAME),
                 Integer.parseInt(request.getParameter(Constants.AGE)));
-        dataProvider.insert(user);
+        boolean a = dataProvider.insert(user);
         PrintWriter writer = response.getWriter();
-        writer.println("is it work?" + user);
+        writer.println("is it work?" + user + " boolean: " + a);
 //        response.sendRedirect("list");
     }
 
