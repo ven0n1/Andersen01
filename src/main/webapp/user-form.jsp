@@ -24,10 +24,10 @@
     <div class="card">
         <div class="card-body">
             <c:if test="${user != null}">
-            <form action="/update" method="post">
+            <form action="<%=request.getContextPath()%>/update" method="post">
                 </c:if>
                 <c:if test="${user == null}">
-                <form action="/insert" method="post">
+                <form action="<%=request.getContextPath()%>/insert" method="post">
                     </c:if>
 
                     <caption>
