@@ -80,10 +80,10 @@ public class UserServlet extends HttpServlet {
             throws IOException {
         User user = new User(request.getParameter(Constants.SURNAME), request.getParameter(Constants.NAME),
                 Integer.parseInt(request.getParameter(Constants.AGE)));
-        String a = dataProvider.insert(user);
-        PrintWriter writer = response.getWriter();
-        writer.println("is it work?" + user + " String: " + a);
-//        response.sendRedirect("list");
+        dataProvider.insert(user);
+//        PrintWriter writer = response.getWriter();
+//        writer.println("is it work?" + user + " String: " + a);
+        response.sendRedirect("list");
     }
 
     private void updateUser(HttpServletRequest request, HttpServletResponse response)

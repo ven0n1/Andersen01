@@ -5,7 +5,7 @@ import com.example.andersen01.model.User;
 import java.util.List;
 
 public interface IDataProvider {
-    String insert(User user);
+    boolean insert(User user);
     User getById(int id);
     List<User> selectAll();
     boolean update(User user);

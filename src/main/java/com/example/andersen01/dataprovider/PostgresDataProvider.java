@@ -12,7 +12,7 @@ import java.util.List;
 public class PostgresDataProvider implements IDataProvider{
     private static final Logger log = LogManager.getLogger(PostgresDataProvider.class);
     @Override
-    public String insert(User user) {
+    public boolean insert(User user) {
         log.info("start insert");
         log.debug("start insert for user: " + user);
         try (Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(Constants.INSERT)) {
@@ -20,13 +20,12 @@ public class PostgresDataProvider implements IDataProvider{
             preparedStatement.setString(2, user.getName());
             preparedStatement.setInt(3, user.getAge());
             log.debug("created prepared statement: " + preparedStatement);
-            return preparedStatement.toString();
         } catch (SQLException e) {
             log.error(e);
-            return "false";
+            return false;
         }
-//        log.info("insert successful");
-//        return "true";
+        log.info("insert successful");
+        return true;
     }
 
     @Override
