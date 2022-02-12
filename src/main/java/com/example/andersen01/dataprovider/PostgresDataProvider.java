@@ -15,17 +15,20 @@ public class PostgresDataProvider implements IDataProvider{
     public boolean insert(User user) {
         log.info("start insert");
         log.debug("start insert for user: " + user);
+        boolean inserted = false;
         try (Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(Constants.INSERT)) {
             preparedStatement.setString(1, user.getSurname());
             preparedStatement.setString(2, user.getName());
             preparedStatement.setInt(3, user.getAge());
             log.debug("created prepared statement: " + preparedStatement);
+            inserted = preparedStatement.executeUpdate() > 0;
+            log.debug("inserted status: " + inserted);
         } catch (SQLException e) {
             log.error(e);
-            return false;
+            return inserted;
         }
         log.info("insert successful");
-        return true;
+        return inserted;
     }
 
     @Override
