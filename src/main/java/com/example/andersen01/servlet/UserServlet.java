@@ -39,6 +39,7 @@ public class UserServlet extends HttpServlet {
             case "/update":
                 updateUser(request, response);
                 break;
+            case "/list":
             default:
                 selectAll(request, response);
                 break;
