@@ -6,6 +6,7 @@ public class Constants {
     public static final String SELECT_ALL = "SELECT * FROM users;";
     public static final String UPDATE = "UPDATE users SET surname = ?, name = ?, age = ? WHERE id = ?;";
     public static final String DELETE = "DELETE FROM users WHERE id = ?;";
+    public static final String POSTGRES_CLASS = "org.postgresql.Driver";
     public static final String POSTGRES_URL = "jdbc:postgresql://192.168.56.106:5432/yaminov?user=postgres&password=qwerty";
     public static final String ID = "id";
     public static final String SURNAME = "surname";

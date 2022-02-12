@@ -106,8 +106,9 @@ public class PostgresDataProvider implements IDataProvider{
         log.info("start connection");
         Connection connection = null;
         try {
+            Class.forName(Constants.POSTGRES_CLASS);
             connection = DriverManager.getConnection(Constants.POSTGRES_URL);
-        } catch (SQLException e) {
+        } catch (SQLException|ClassNotFoundException e) {
             log.error(e);
         }
         log.info("connection successful");
