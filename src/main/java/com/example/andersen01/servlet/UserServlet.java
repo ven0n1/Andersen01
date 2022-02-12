@@ -9,6 +9,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet("/")
@@ -80,7 +81,9 @@ public class UserServlet extends HttpServlet {
         User user = new User(request.getParameter(Constants.SURNAME), request.getParameter(Constants.NAME),
                 Integer.parseInt(request.getParameter(Constants.AGE)));
         dataProvider.insert(user);
-        response.sendRedirect("list");
+        PrintWriter writer = response.getWriter();
+        writer.println("is it work?" + user);
+//        response.sendRedirect("list");
     }
 
     private void updateUser(HttpServletRequest request, HttpServletResponse response)
