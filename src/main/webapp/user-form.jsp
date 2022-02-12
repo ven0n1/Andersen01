@@ -41,9 +41,10 @@
                         </h2>
                     </caption>
 
-                    <c:if test="${user != null}">
-                        <input type="hidden" name="id" value="<c:out value='${user.id}' />" />
-                    </c:if>
+<%--                    <c:if test="${user != null}">--%>
+<%--                        <input type="hidden" name="id" value="<c:out value='${user.id}' />" />--%>
+<%--                    </c:if>--%>
+                    <input type="hidden" name="id" value="<c:out value='${user.id}' />" />
 
                     <fieldset class="form-group">
                         <label>User Surname</label> <input type="text" value="<c:out value='${user.surname}' />" class="form-control" name="surname" required="required">
