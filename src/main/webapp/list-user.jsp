@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.example.andersen01.model.User" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: ven0n
   Date: 12.02.2022
@@ -6,14 +7,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
     <title>List of Users</title>
 </head>
 <body>
     <div>
-        <a href="<%=request.getContextPath()%>/new">Add New User</a>
+<%--        <a href="<%=request.getContextPath()%>/new">Add New User</a>--%>
     </div>
     <br>
     <table style="border-collapse: collapse; width: 100%;" border="1">
@@ -26,25 +26,25 @@
                 <th>Actions</th>
             </tr>
         </thead>
+        <% List<User> users = (List<User>) request.getAttribute("listUser");%>
         <tbody>
-            <c:forEach var="user" items="${listUser}">
-
+            <%for (User user:users) {%>
                 <tr>
                     <td>
-                        <c:out value="${user.id}" />
+                        <%=user.getId()%>
                     </td>
                     <td>
-                        <c:out value="${user.surname}" />
+                        <%=user.getSurname()%>
                     </td>
                     <td>
-                        <c:out value="${user.name}" />
+                        <%=user.getName()%>
                     </td>
                     <td>
-                        <c:out value="${user.age}" />
+                        <%=user.getAge()%>
                     </td>
-                    <td><a href="edit?id=<c:out value='${user.id}' />">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=<c:out value='${user.id}' />">Delete</a></td>
+<%--                    <td><a href="edit?id=<%=user.getId()%>">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=<%=user.getId()%>">Delete</a></td>--%>
                 </tr>
-            </c:forEach>
+            <%}%>
         </tbody>
     </table>
 </body>
