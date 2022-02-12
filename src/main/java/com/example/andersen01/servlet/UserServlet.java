@@ -11,7 +11,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "UserServlet", value = "/UserServlet")
+@WebServlet("/")
 public class UserServlet extends HttpServlet {
     private IDataProvider dataProvider;
 
@@ -24,22 +24,22 @@ public class UserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getServletPath();
         switch (action) {
-            case "/UserServlet/new":
+            case "/new":
                 showNewForm(request, response);
                 break;
-            case "/UserServlet/insert":
+            case "/insert":
                 insertUser(request, response);
                 break;
-            case "/UserServlet/delete":
+            case "/delete":
                 deleteUser(request, response);
                 break;
-            case "/UserServlet/edit":
+            case "/edit":
                 showEditForm(request, response);
                 break;
-            case "/UserServlet/update":
+            case "/update":
                 updateUser(request, response);
                 break;
-            case "/UserServlet/list":
+            case "/list":
             default:
                 selectAll(request, response);
                 break;

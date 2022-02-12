@@ -17,7 +17,7 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-dark" style="background-color: tomato">
         <ul class="navbar-nav">
-            <li><a href="<%=request.getContextPath()%>/UserServlet/list" class="nav-link">Users</a></li>
+            <li><a href="<%=request.getContextPath()%>/list" class="nav-link">Users</a></li>
         </ul>
     </nav>
 </header>
@@ -27,7 +27,7 @@
         <h3 class="text-center">List of Users</h3>
         <hr>
         <div class="container text-left">
-            <a href="<%=request.getContextPath()%>/UserServlet/new" class="btn btn-success">Add New User</a>
+            <a href="<%=request.getContextPath()%>/new" class="btn btn-success">Add New User</a>
         </div>
         <br>
         <table class="table table-bordered">
@@ -48,7 +48,7 @@
                     <td><c:out value="${user.surname}" /></td>
                     <td><c:out value="${user.name}" /></td>
                     <td><c:out value="${user.age}" /></td>
-                    <td><a href="/UserServlet/edit?id=<c:out value='${user.id}' />">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="/UserServlet/delete?id=<c:out value='${user.id}' />">Delete</a></td>
+                    <td><a href="edit?id=<c:out value='${user.id}' />">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=<c:out value='${user.id}' />">Delete</a></td>
                 </tr>
             </c:forEach>
             <!-- } -->
