@@ -8,6 +8,8 @@
 <h1><%= "Try 3!" %>
 </h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<a href="HelloServlet">Hello Servlet</a>
+<br/>
+<a href="UserServlet">User Servlet</a>
 </body>
 </html>

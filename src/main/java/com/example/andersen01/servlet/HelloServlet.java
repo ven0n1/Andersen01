@@ -1,10 +1,10 @@
-package com.example.andersen01;
+package com.example.andersen01.servlet;
 
 import java.io.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
-@WebServlet(name = "helloServlet", value = "/hello-servlet")
+@WebServlet(name = "HelloServlet", value = "/HelloServlet")
 public class HelloServlet extends HttpServlet {
     private String message;
 

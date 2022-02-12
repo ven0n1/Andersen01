@@ -9,5 +9,5 @@ public interface IDataProvider {
     User getById(int id);
     List<User> selectAll();
     boolean update(User user);
-    boolean delete(User user);
+    boolean delete(int id);
 }
