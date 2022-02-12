@@ -24,10 +24,10 @@
     <div class="card">
         <div class="card-body">
             <c:if test="${user != null}">
-            <form action="update" method="post">
+            <form action="/update" method="post">
                 </c:if>
                 <c:if test="${user == null}">
-                <form action="insert" method="post">
+                <form action="/insert" method="post">
                     </c:if>
 
                     <caption>
@@ -46,15 +46,15 @@
                     </c:if>
 
                     <fieldset class="form-group">
-                        <label>User Name</label> <input type="text" value="<c:out value='${user.surname}' />" class="form-control" name="surname" required="required">
+                        <label>User Surname</label> <input type="text" value="<c:out value='${user.surname}' />" class="form-control" name="surname" required="required">
                     </fieldset>
 
                     <fieldset class="form-group">
-                        <label>User Email</label> <input type="text" value="<c:out value='${user.name}' />" class="form-control" name="name" required="required">
+                        <label>User Name</label> <input type="text" value="<c:out value='${user.name}' />" class="form-control" name="name" required="required">
                     </fieldset>
 
                     <fieldset class="form-group">
-                        <label>User Country</label> <input type="number" value="<c:out value='${user.age}' />" class="form-control" name="age" required="required">
+                        <label>User Age</label> <input type="number" value="<c:out value='${user.age}' />" class="form-control" name="age" required="required">
                     </fieldset>
 
                     <button type="submit" class="btn btn-success">Save</button>
