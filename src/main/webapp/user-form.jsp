@@ -11,6 +11,7 @@
     <title>User Form</title>
 </head>
 <body>
-
+    <a href="<%=request.getContextPath()%>/list" class="nav-link">Users</a>
+    <br>
 </body>
 </html>
