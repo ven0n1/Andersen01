@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>User Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 <header>
@@ -41,10 +42,10 @@
                         </h2>
                     </caption>
 
-<%--                    <c:if test="${user != null}">--%>
-<%--                        <input type="hidden" name="id" value="<c:out value='${user.id}' />" />--%>
-<%--                    </c:if>--%>
-                    <input type="hidden" name="id" value="<c:out value='${user.id}' />" />
+                    <c:if test="${user != null}">
+                        <input type="hidden" name="id" value="<c:out value='${user.id}' />" />
+                    </c:if>
+<%--                    <input type="hidden" name="id" value="<c:out value='${user.id}' />" />--%>
 
                     <fieldset class="form-group">
                         <label>User Surname</label> <input type="text" value="<c:out value='${user.surname}' />" class="form-control" name="surname" required="required">
