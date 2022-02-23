@@ -1,7 +1,7 @@
 package com.example.andersen01.model;
 
 import java.util.Objects;
-
+//comment
 public class User {
     private int id;
     private String surname;
