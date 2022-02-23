@@ -14,4 +14,5 @@ public class Constants {
     public static final String AGE = "age";
     public static final String JSP_USER_LIST = "list-user.jsp";
     public static final String JSP_USER_FORM = "user-form.jsp";
+    public static final String NEW_STRING = "new String";
 }
